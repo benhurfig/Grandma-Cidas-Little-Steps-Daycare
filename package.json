@@ -1,0 +1,20 @@
+{
+  "name": "grandma-cidas-little-steps-daycare",
+  "version": "4.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Grandma Cida\u2019s Little Steps Daycare \u2014 VS Code + Cloudflare Pages",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env src/build.mjs && node tools/server.mjs public",
+    "build": "node --env-file-if-exists=.env src/build.mjs",
+    "build:production": "npm run build",
+    "check": "node tools/check.mjs",
+    "test": "node --test test/runtime-events.test.mjs",
+    "preview": "node tools/server.mjs public",
+    "check:syntax": "node tools/check-syntax.mjs",
+    "qa": "npm run build && npm run check && npm run check:syntax && npm test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
